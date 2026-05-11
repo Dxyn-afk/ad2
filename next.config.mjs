@@ -1,9 +1,10 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   compress: true,
   poweredByHeader: false,
-  serverExternalPackages: ['bcryptjs'],
+  experimental: {
+    serverComponentsExternalPackages: ['bcryptjs'],
+  },
 
   async headers() {
     return [
